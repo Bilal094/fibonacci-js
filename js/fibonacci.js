@@ -1,15 +1,18 @@
-var firstNumber = 0;
-var secondNumber = 1;
-
-function fibonacci(x,y) {
+function fibonacci() {
+    const fib = []
     for (i = 0; i <= 20; i++) {
-        x = y;
-        y += x;
+        if (i < 2) {
+            fib.push(i)
+        } else {
+            x = fib[i - 1] + fib[i - 2]
+            fib.push(x)
+        }
     }
-    return x;
-
+    return fib;
 }
 
+// Ik heb dit met Enes' hulp gemaakt en heeft het uitgelegd
 // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610
 
-document.write(fibonacci(firstNumber,secondNumber));
+console.log(fibonacci());
+document.write(fibonacci());
